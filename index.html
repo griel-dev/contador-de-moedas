@@ -5,24 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contador de Cédulas e Moedas</title>
 </head>
-<body>
-
+<body style="overflow: hidden;">
     <header>
-
         <img src="assets/png/logo.png" alt="Desenvolvido por Griel" />
-
     </header>
-
-
+    <div id="loading">
+        <style>
+            #loading {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                z-index: 1;
+                background-color: var(--white);
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                animation: fadeIn 0.5s;
+            }
+            #loading.fadeOut {
+                animation: fadeOut 0.5s;
+            }
+            
+            @keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(1.5);
+                }
+            }
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: scale(2);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        </style>
+        <img src="assets/svg/loading.svg" alt="Carregando">
+        <p>Carregando...</p>
+    </div>
     <main>
-
         <section id="moedas">
             <h2>Moedas</h2>
             <div class="values">
                 <p class="value">R$0,01</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="001" id="001" />
+                    <input type="text" value="0" name="001" id="001" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -35,7 +73,7 @@
                 <p class="value">R$0,05</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="005" id="005" />
+                    <input type="text" value="0" name="005" id="005" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -48,7 +86,7 @@
                 <p class="value">R$0,10</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="010" id="010" />
+                    <input type="text" value="0" name="010" id="010" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -61,7 +99,7 @@
                 <p class="value">R$0,25</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="025" id="025" />
+                    <input type="text" value="0" name="025" id="025" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -74,7 +112,7 @@
                 <p class="value">R$0,50</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="050" id="050" />
+                    <input type="text" value="0" name="050" id="050" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -87,7 +125,7 @@
                 <p class="value">R$1,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="100-m" id="100-m" />
+                    <input type="text" value="0" name="100-m" id="100-m" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -103,7 +141,7 @@
                 <p class="value">R$1,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="100-n" id="100-n" />
+                    <input type="text" value="0" name="100-n" id="100-n" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -116,7 +154,7 @@
                 <p class="value">R$2,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="200" id="200" />
+                    <input type="text" value="0" name="200" id="200" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -129,7 +167,7 @@
                 <p class="value">R$5,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="500" id="500" />
+                    <input type="text" value="0" name="500" id="500" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -142,7 +180,7 @@
                 <p class="value">R$10,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="1000" id="1000" />
+                    <input type="text" value="0" name="1000" id="1000" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -155,7 +193,7 @@
                 <p class="value">R$20,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="2000" id="2000" />
+                    <input type="text" value="0" name="2000" id="2000" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -168,7 +206,7 @@
                 <p class="value">R$50,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="5000" id="5000" />
+                    <input type="text" value="0" name="5000" id="5000" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -181,7 +219,7 @@
                 <p class="value">R$100,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="10000" id="10000" />
+                    <input type="text" value="0" name="10000" id="10000" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -194,7 +232,7 @@
                 <p class="value">R$200,00</p>
                 <p>x</p>
                 <div>
-                    <input type="number" name="20000" id="20000" />
+                    <input type="text" value="0" name="20000" id="20000" />
                     <div>
                         <button type="button">+</button>
                         <button type="button">-</button>
@@ -204,7 +242,6 @@
                 <p class="value">R$0,05</p>
             </div>
         </section>
-
     </main>
 
     
@@ -214,7 +251,7 @@
                 <img src="assets/svg/refresh-2.svg" alt="Redefinir contador" />
                 <p>Limpar</p>
             </div>
-            <button>
+            <button id="open-footer">
                 <img src="assets/svg/up-arrow.svg" alt="Ver mais" />
             </button>
         </div>
@@ -241,5 +278,8 @@
     <link rel="stylesheet" href="system/css/stylesheet.css" />
     <link rel="preload" href="system/css/fonts.css" as="style" />
     <link rel="stylesheet" href="system/css/fonts.css" />
+
+    <script src="system/js/loading.js"></script>
+    <script src="system/js/index.js" async></script>
 </body>
 </html>

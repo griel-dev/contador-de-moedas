@@ -128,7 +128,7 @@ footer {
   height: 120px;
   color: var(--white);
   flex-direction: column;
-  transition: translate 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 footer .button {
   display: flex;
@@ -178,6 +178,7 @@ footer .button button {
 }
 footer .button button img {
   height: 23px;
+  transition: 0.3s ease-in-out;
 }
 footer .button button:hover {
   background-color: var(--white-hover);
@@ -217,6 +218,9 @@ footer section #total-m p, footer section #total-m h3, footer section #total-n p
 }
 footer.open {
   height: 240px;
+}
+footer.open button img {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

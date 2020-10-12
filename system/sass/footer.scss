@@ -6,7 +6,7 @@ footer {
     height: 120px;
     color: var(--white);
     flex-direction: column;
-    transition: translate 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     .button {
         display: flex;
         justify-content: space-between;
@@ -53,6 +53,7 @@ footer {
             cursor: pointer;
             img {
                 height: 23px;
+                transition: 0.3s ease-in-out;
             }
             &:hover {
                 background-color: var(--white-hover);
@@ -94,5 +95,10 @@ footer {
     }
     &.open {
         height: 240px;
+        button {
+            img {
+                transform: rotate(180deg);
+            }
+        }
     }
 }
