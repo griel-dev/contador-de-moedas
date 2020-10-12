@@ -65,3 +65,22 @@ main {
         margin-bottom: var(--space-50);
     }
 }
+
+@media (min-width: 992px) {
+    main {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: calc(var(--space-50) * 3);
+        section {
+            width: 450px;
+            &#moedas {
+                height: 370px;
+            }
+        }
+        section + section {
+            margin: 0;
+            margin-left: var(--space-50);
+        }
+    }
+
+}
