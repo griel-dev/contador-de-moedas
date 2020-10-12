@@ -1,0 +1,17 @@
+{
+  "name": "contador-de-moedas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass, build",
+    "sass": "sass --watch system/sass/index.scss:system/css/stylesheet.css",
+    "build": "sass system/sass/index.scss:system/css/stylesheet.css --style=compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.26.10"
+  }
+}
