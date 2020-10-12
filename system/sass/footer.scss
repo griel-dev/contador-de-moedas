@@ -1,0 +1,98 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: var(--blue);
+    width: 100%;
+    height: 120px;
+    color: var(--white);
+    flex-direction: column;
+    transition: translate 0.5s ease-in-out;
+    .button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--blue-2);
+        height: var(--space-50);
+        padding: var(--space-5) var(--space-20);
+        > div {
+            background-color: var(--white);
+            border: 1px solid var(--gray);
+            width: 150px;
+            height: 40px;
+            flex-direction: row;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            img {
+                height: 30px;
+                margin-right: var(--space-5);
+            }
+            p {
+                font-size: 27px;
+                color: var(--blue);
+            }
+            &:hover {
+                background-color: var(--white-hover);
+            }
+            &:active {
+                box-shadow: inset 0 0 var(--space-10) var(--dark);
+            }
+        }
+        button {
+            border: 1px solid var(--gray);
+            width: 41px;
+            height: 41px;
+            border-radius: var(--space-20);
+            outline: none;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(30px);    
+            transition: all 0.3s;
+            cursor: pointer;
+            img {
+                height: 23px;
+            }
+            &:hover {
+                background-color: var(--white-hover);
+            }
+            &:active {
+                box-shadow: inset 0 0 var(--space-10) var(--dark);
+            }
+        }
+    }
+    section {
+        flex-direction: column;
+        text-transform: uppercase;
+        #total {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin: var(--space-20) 0 calc(var(--space-20) * 2) 0;
+            h2, p {
+                font-size: 30px;
+                font-weight: 700;
+                margin: 0 var(--space-10);
+                padding: 0;
+            }
+        }
+        div {
+            flex-direction: row;
+            width: 100%;
+        }
+        #total-m, #total-n {
+            flex-direction: column;
+            align-items: center;
+            height: 65px;
+            p, h3 {
+                margin: 0;
+                margin-bottom: var(--space-20);
+                padding: 0;
+            }
+        }
+    }
+    &.open {
+        height: 240px;
+    }
+}

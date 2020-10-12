@@ -1,0 +1,14 @@
+* {
+    
+}
+
+body {
+    margin: 0;
+    background-color: var(--white);
+    color: var(--dark);
+    font-family: 'Roboto';
+}
+
+header, img, section, div, main, input, button, footer {
+    display: flex;
+}

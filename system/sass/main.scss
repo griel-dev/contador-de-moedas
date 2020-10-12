@@ -1,0 +1,67 @@
+main {
+    margin-top: var(--space-50);
+    margin-left: var(--space-20);
+    margin-right: var(--space-20);
+    margin-bottom: calc(var(--space-50) * 2);
+    flex-direction: column;
+    section {
+        flex-direction: column;
+        border: 1px solid var(--gray);
+        border-radius: var(--space-20); 
+        padding: var(--space-20);
+        h2 {
+            margin: 0;
+            padding: 0;
+            margin-top: -36px;
+            background-color: var(--white);
+            width: 120px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            text-transform: uppercase;
+            padding-bottom: var(--space-10);
+        }
+        .values {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            p {
+                font-size: 20px;
+                font-weight: 100;
+                &.value {
+                    font-weight: 700;
+                    width: 20%;
+                }
+            }
+            div {
+                flex-direction: column;
+                input {
+                    height: var(--space-20);
+                    width: calc(var(--space-50) + var(--space-10));
+                    border-radius: var(--space-20);
+                    border: 1px solid var(--gray);
+                    text-align: center;
+                    outline: none;
+                }
+                div {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-top: var(--space-5);
+                    button {
+                        border: 1px solid var(--blue-1);
+                        background-color: transparent;
+                        border-radius: var(--space-5);
+                        width: calc(var(--space-20) + var(--space-10));
+                        height: 18px;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+    section + section {
+        margin-top: var(--space-50);
+        margin-bottom: var(--space-50);
+    }
+}

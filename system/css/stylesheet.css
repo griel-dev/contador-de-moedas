@@ -1,5 +1,205 @@
-* {
-  border: none;
+body {
+  margin: 0;
+  background-color: var(--white);
+  color: var(--dark);
+  font-family: "Roboto";
+}
+
+header, img, section, div, main, input, button, footer {
+  display: flex;
+}
+
+:root {
+  --white: #FFF;
+  --white-hover: rgba(255, 255, 255, .9);
+  --black: #000;
+  --dark: #333333;
+  --blue: #0B2954;
+  --blue-1: #3F6293;
+  --blue-2: #134994;
+  --gray: #707070;
+  --space-5: 5px;
+  --space-10: 10px;
+  --space-20: 20px;
+  --space-50: 50px;
+}
+
+header {
+  background-color: var(--blue);
+  height: 80px;
+  justify-content: center;
+}
+header img {
+  height: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+main {
+  margin-top: var(--space-50);
+  margin-left: var(--space-20);
+  margin-right: var(--space-20);
+  margin-bottom: calc(var(--space-50) * 2);
+  flex-direction: column;
+}
+main section {
+  flex-direction: column;
+  border: 1px solid var(--gray);
+  border-radius: var(--space-20);
+  padding: var(--space-20);
+}
+main section h2 {
+  margin: 0;
+  padding: 0;
+  margin-top: -36px;
+  background-color: var(--white);
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: var(--space-10);
+}
+main section .values {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+main section .values p {
+  font-size: 20px;
+  font-weight: 100;
+}
+main section .values p.value {
+  font-weight: 700;
+  width: 20%;
+}
+main section .values div {
+  flex-direction: column;
+}
+main section .values div input {
+  height: var(--space-20);
+  width: calc(var(--space-50) + var(--space-10));
+  border-radius: var(--space-20);
+  border: 1px solid var(--gray);
+  text-align: center;
+  outline: none;
+}
+main section .values div div {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: var(--space-5);
+}
+main section .values div div button {
+  border: 1px solid var(--blue-1);
+  background-color: transparent;
+  border-radius: var(--space-5);
+  width: calc(var(--space-20) + var(--space-10));
+  height: 18px;
+  justify-content: center;
+  align-items: center;
+}
+main section + section {
+  margin-top: var(--space-50);
+  margin-bottom: var(--space-50);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--blue);
+  width: 100%;
+  height: 120px;
+  color: var(--white);
+  flex-direction: column;
+  transition: translate 0.5s ease-in-out;
+}
+footer .button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blue-2);
+  height: var(--space-50);
+  padding: var(--space-5) var(--space-20);
+}
+footer .button > div {
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  width: 150px;
+  height: 40px;
+  flex-direction: row;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+footer .button > div img {
+  height: 30px;
+  margin-right: var(--space-5);
+}
+footer .button > div p {
+  font-size: 27px;
+  color: var(--blue);
+}
+footer .button > div:hover {
+  background-color: var(--white-hover);
+}
+footer .button > div:active {
+  box-shadow: inset 0 0 var(--space-10) var(--dark);
+}
+footer .button button {
+  border: 1px solid var(--gray);
+  width: 41px;
+  height: 41px;
+  border-radius: var(--space-20);
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(30px);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+footer .button button img {
+  height: 23px;
+}
+footer .button button:hover {
+  background-color: var(--white-hover);
+}
+footer .button button:active {
+  box-shadow: inset 0 0 var(--space-10) var(--dark);
+}
+footer section {
+  flex-direction: column;
+  text-transform: uppercase;
+}
+footer section #total {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: var(--space-20) 0 calc(var(--space-20) * 2) 0;
+}
+footer section #total h2, footer section #total p {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 var(--space-10);
+  padding: 0;
+}
+footer section div {
+  flex-direction: row;
+  width: 100%;
+}
+footer section #total-m, footer section #total-n {
+  flex-direction: column;
+  align-items: center;
+  height: 65px;
+}
+footer section #total-m p, footer section #total-m h3, footer section #total-n p, footer section #total-n h3 {
+  margin: 0;
+  margin-bottom: var(--space-20);
+  padding: 0;
+}
+footer.open {
+  height: 240px;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

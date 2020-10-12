@@ -1,0 +1,10 @@
+header {
+    background-color: var(--blue);
+    height: 80px;
+    justify-content: center;
+    img {
+        height: 100px;
+        position: relative;
+        z-index: 2;
+    }
+}
