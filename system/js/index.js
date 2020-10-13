@@ -1,12 +1,10 @@
 class index
 {
-
     openFooter(){
         document.querySelector("footer").classList.toggle('open');
     }
     checkField(item){
         let newValue = item.value.replace(/[^0-9]/g, '')
-        console.log(newValue);
         item.value = newValue;
     }
     buttonEvent(oper, input){
@@ -27,7 +25,23 @@ class index
     }
     calc(n1, n2, subtotal) {
         let result = eval(parseFloat(n1.replace(",",".")) * parseFloat(n2)).toFixed(2);
-        subtotal[0].innerText = "R$" + result.toString().replace(".",",");
+        let final = parseFloat(result);
+        console.log(final.toFixed(2).toString())
+        console.log(n2.innerText);
+        n2.innerText = ''
+        this.calcTotal();
+    }
+    calcTotal(){
+        let totalCalc = [];
+        let subtotal = document.querySelectorAll(".subtotal")
+        subtotal.forEach(function(sub){
+            let result = sub.innerText.replace("R$","");
+            totalCalc.push(parseFloat(result.replace(",",".")))
+            for (let i = 0; i == totalCalc.length-1; i++) {
+                let final = totalCalc[i]+totalCalc[i];
+               // console.log('Total final: ' + final);
+            }
+        });
     }
 }
 
@@ -59,9 +73,9 @@ buttons.forEach(btn=>{
     btn.addEventListener("click", function(){
         indexjs.buttonEvent(btn.innerText, btn.parentElement.parentElement.firstElementChild.id);
         indexjs.getElements(btn.parentElement.parentElement.parentElement);
-        /*let n1 = btn.parentElement.parentElement.parentNode.firstElementChild.innerText.replace("R$","");
+        let n1 = btn.parentElement.parentElement.parentNode.firstElementChild.innerText.replace("R$","");
         let n2 = btn.parentElement.parentElement.parentNode.lastElementChild;
         let input = btn.parentElement.parentElement.parentNode.getElementsByTagName('input')[0];
-        indexjs.calc(n1.replace(",","."), n2, input);*/
+        indexjs.calc(n1.replace(",","."), n2, input);
     });
 });
