@@ -5,7 +5,10 @@ body {
     color: var(--dark);
     font-family: 'Roboto';
 }
+a {
+    text-decoration: none;
+}
 
-header, img, section, div, main, input, button, footer {
+header, img, section, div, main, input, button, footer, a {
     display: flex;
 }

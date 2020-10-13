@@ -5,7 +5,11 @@ body {
   font-family: "Roboto";
 }
 
-header, img, section, div, main, input, button, footer {
+a {
+  text-decoration: none;
+}
+
+header, img, section, div, main, input, button, footer, a {
   display: flex;
 }
 
@@ -232,6 +236,31 @@ footer.open {
 }
 footer.open button img {
   transform: rotate(180deg);
+}
+
+#icons {
+  position: a;
+  margin-top: -300px;
+  width: 100%;
+  align-items: center;
+}
+#icons .wrap {
+  max-width: 420px;
+}
+#icons .wrap div {
+  flex-direction: column;
+  align-items: center;
+}
+#icons .wrap div a {
+  flex-direction: column;
+  color: var(--dark);
+}
+#icons .wrap div a p {
+  text-transform: capitalize;
+}
+#icons .wrap div a img {
+  height: 35px;
+  width: auto;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
