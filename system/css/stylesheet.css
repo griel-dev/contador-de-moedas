@@ -28,6 +28,8 @@ header {
   background-color: var(--blue);
   height: 80px;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 header img {
   height: 100px;
