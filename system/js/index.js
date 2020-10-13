@@ -1,8 +1,6 @@
 class index
 {
 
-    
-
     openFooter(){
         document.querySelector("footer").classList.toggle('open');
     }
@@ -10,6 +8,26 @@ class index
         let newValue = item.value.replace(/[^0-9]/g, '')
         console.log(newValue);
         item.value = newValue;
+    }
+    buttonEvent(oper, input){
+        let inputValue = document.getElementById(input).value;
+        if (oper == '+') {
+            document.getElementById(input).value = eval(parseInt(inputValue) + 1);
+        } else if (oper == '-') {
+            if (inputValue != 0) {
+                document.getElementById(input).value = eval(parseInt(inputValue) - 1);
+            }
+        }
+    }
+    getElements(parent){
+        let n1 = parent.getElementsByClassName("value")[0].innerText;
+        let n2 = parent.getElementsByTagName('input')[0].value;
+        let subtotal = parent.getElementsByClassName("subtotal");
+        this.calc(n1.replace("R$",""), n2.replace("R$",""), subtotal);
+    }
+    calc(n1, n2, subtotal) {
+        let result = eval(parseFloat(n1.replace(",",".")) * parseFloat(n2)).toFixed(2);
+        subtotal[0].innerText = "R$" + result.toString().replace(".",",");
     }
 }
 
@@ -23,6 +41,7 @@ fields = document.querySelectorAll("input");
 fields.forEach(input => {
     input.addEventListener("input", function(){
         indexjs.checkField(input);
+        indexjs.getElements(input.parentElement.parentElement)
     });
     input.addEventListener("focus", function(){
         if (input.value == 0 || input.value == '') {
@@ -34,5 +53,15 @@ fields.forEach(input => {
             input.value = '0';
         }
     });
-    
-})
+});
+buttons = document.querySelectorAll('button');
+buttons.forEach(btn=>{
+    btn.addEventListener("click", function(){
+        indexjs.buttonEvent(btn.innerText, btn.parentElement.parentElement.firstElementChild.id);
+        indexjs.getElements(btn.parentElement.parentElement.parentElement);
+        /*let n1 = btn.parentElement.parentElement.parentNode.firstElementChild.innerText.replace("R$","");
+        let n2 = btn.parentElement.parentElement.parentNode.lastElementChild;
+        let input = btn.parentElement.parentElement.parentNode.getElementsByTagName('input')[0];
+        indexjs.calc(n1.replace(",","."), n2, input);*/
+    });
+});
