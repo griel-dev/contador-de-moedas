@@ -21,27 +21,64 @@ class index
         let n1 = parent.getElementsByClassName("value")[0].innerText;
         let n2 = parent.getElementsByTagName('input')[0].value;
         let subtotal = parent.getElementsByClassName("subtotal");
-        this.calc(n1.replace("R$",""), n2.replace("R$",""), subtotal);
+        this.calc(n1.replace("R$","").replace(",","."), n2, subtotal);
     }
     calc(n1, n2, subtotal) {
-        let result = eval(parseFloat(n1.replace(",",".")) * parseFloat(n2)).toFixed(2);
-        let final = parseFloat(result);
-        console.log(final.toFixed(2).toString())
-        console.log(n2.innerText);
-        n2.innerText = ''
+        let r1 = parseFloat(n1);
+        let r2 = parseInt(n2);
+        let result = eval(r1 * r2);
+        subtotal[0].innerText = 'R$' + result.toFixed(2).toString().replace(".",",");
+        this.calcMoedas();
+        this.calcNotas();
         this.calcTotal();
+    }
+    calcMoedas(){
+        let moedasSection = document.querySelector("#moedas");
+        let moedas = moedasSection.querySelectorAll(".subtotal");
+        let totalMoedasArr = [];
+        moedas.forEach(value=>{
+            let result = value.innerText.replace(",",".").replace("R$","");
+            totalMoedasArr.push(parseFloat(result));
+        });
+        let totalMoedas = totalMoedasArr.reduce((total, numero) => total + numero, 0);
+        document.querySelector("#total-m").lastElementChild.innerText = "R$" + totalMoedas.toFixed(2).toString().replace(".",",");
+    }
+    calcNotas(){
+        let notasSection = document.querySelector("#notas");
+        let notas = notasSection.querySelectorAll(".subtotal");
+        let totalNotasArr = [];
+        notas.forEach(value=>{
+            let result = value.innerText.replace(",",".").replace("R$","");
+            totalNotasArr.push(parseFloat(result));
+        });
+        let totalNotas = totalNotasArr.reduce((total, numero) => total + numero, 0);
+        document.querySelector("#total-n").lastElementChild.innerText = "R$" + totalNotas.toFixed(2).toString().replace(".",",");
     }
     calcTotal(){
         let totalCalc = [];
-        let subtotal = document.querySelectorAll(".subtotal")
+        let subtotal = document.querySelectorAll(".subtotal");
+        
         subtotal.forEach(function(sub){
-            let result = sub.innerText.replace("R$","");
-            totalCalc.push(parseFloat(result.replace(",",".")))
-            for (let i = 0; i == totalCalc.length-1; i++) {
-                let final = totalCalc[i]+totalCalc[i];
-               // console.log('Total final: ' + final);
-            }
+            let result = sub.innerText.replace("R$","");;
+            totalCalc.push(parseFloat(result.replace(",",".")));
         });
+        let total = totalCalc.reduce((total, numero) => total + numero, 0);
+        console.log("Valor Total: " + total);
+        document.querySelector("#total").lastElementChild.innerText = "R$" + total.toFixed(2).toString().replace(".",",");
+    }
+    clear(){
+        let input = document.querySelectorAll("input");
+        let subtotal = document.querySelectorAll(".subtotal");
+        input.forEach(item=>{
+            item.value = "0";
+        });
+        subtotal.forEach(item=>{
+            item.innerText = "R$0,00";
+        });
+        this.calcTotal();
+        this.calcMoedas();
+        this.calcNotas();
+
     }
 }
 
@@ -79,3 +116,7 @@ buttons.forEach(btn=>{
         indexjs.calc(n1.replace(",","."), n2, input);
     });
 });
+
+document.querySelector("#clear").addEventListener("click", function(){
+    indexjs.clear();
+})

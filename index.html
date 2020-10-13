@@ -11,7 +11,13 @@
     </header>
     <div id="loading">
         <style>
+            .dot {
+                animation: fadeIn 0.5s;
+                flex-direction: column;
+                align-items: center;
+            }
             #loading {
+                display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -23,7 +29,7 @@
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
-                animation: fadeIn 0.5s;
+                
             }
             #loading.fadeOut {
                 animation: fadeOut 0.5s;
@@ -50,8 +56,11 @@
                 }
             }
         </style>
-        <img src="assets/svg/loading.svg" alt="Carregando">
-        <p>Carregando...</p>
+        <div class="dot">
+            <img src="assets/svg/loading.svg" alt="Carregando">
+            <p>Carregando...</p>
+        </div>
+
     </div>
     <main>
         <section id="moedas">
@@ -247,7 +256,7 @@
     
     <footer>
         <div class="button">
-            <div>
+            <div id="clear">
                 <img src="assets/svg/refresh-2.svg" alt="Redefinir contador" />
                 <p>Limpar</p>
             </div>
@@ -258,16 +267,16 @@
         <section>
             <div id="total">
                 <p>total</p>
-                <h2>R$1,00</h2>
+                <h2>R$0,00</h2>
             </div>
             <div>
                 <div id="total-m">
                     <p>total em moedas</p>
-                    <h3>R$1,00</h3>
+                    <h3>R$0,00</h3>
                 </div>
                 <div id="total-n">
                     <p>total em notas</p>
-                    <h3>R$1,00</h3>
+                    <h3>R$0,00</h3>
                 </div>
             </div>
             

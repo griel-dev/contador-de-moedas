@@ -97,6 +97,15 @@ main section .values div div button {
   height: 18px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s;
+}
+main section .values div div button:hover {
+  background-color: #ebf2ff;
+}
+main section .values div div button:active {
+  background-color: #c9dcff;
 }
 main section + section {
   margin-top: var(--space-50);
