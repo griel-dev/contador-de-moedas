@@ -52,12 +52,13 @@ main {
                         background-color: transparent;
                         border-radius: var(--space-5);
                         width: calc(var(--space-20) + var(--space-10));
-                        height: 18px;
+                        height: 48px;
                         justify-content: center;
                         align-items: center;
                         cursor: pointer;
                         outline: none;
                         transition: 0.5s;
+                        margin-bottom: var(--space-20);
                         &:hover {
                             background-color: #ebf2ff;
                         }
@@ -84,6 +85,17 @@ main {
             width: 450px;
             &#moedas {
                 height: 370px;
+            }
+            .values {
+                div {
+                    div {
+                        button {
+                            height: 18px;
+                            width: 30px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
             }
         }
         section + section {
