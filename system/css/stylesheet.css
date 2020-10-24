@@ -5,7 +5,11 @@ body {
   font-family: "Roboto";
 }
 
-header, img, section, div, main, input, button, footer {
+a {
+  text-decoration: none;
+}
+
+header, img, section, div, main, input, button, footer, a {
   display: flex;
 }
 
@@ -96,12 +100,13 @@ main section .values div div button {
   background-color: transparent;
   border-radius: var(--space-5);
   width: calc(var(--space-20) + var(--space-10));
-  height: 18px;
+  height: 48px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   outline: none;
   transition: 0.5s;
+  margin-bottom: var(--space-20);
 }
 main section .values div div button:hover {
   background-color: #ebf2ff;
@@ -125,6 +130,11 @@ main section + section {
   }
   main section#moedas {
     height: 370px;
+  }
+  main section .values div div button {
+    height: 18px;
+    width: 30px;
+    margin-bottom: 0;
   }
   main section + section {
     margin: 0;
@@ -232,6 +242,31 @@ footer.open {
 }
 footer.open button img {
   transform: rotate(180deg);
+}
+
+#icons {
+  position: a;
+  margin-top: -300px;
+  width: 100%;
+  align-items: center;
+}
+#icons .wrap {
+  max-width: 420px;
+}
+#icons .wrap div {
+  flex-direction: column;
+  align-items: center;
+}
+#icons .wrap div a {
+  flex-direction: column;
+  color: var(--dark);
+}
+#icons .wrap div a p {
+  text-transform: capitalize;
+}
+#icons .wrap div a img {
+  height: 35px;
+  width: auto;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
